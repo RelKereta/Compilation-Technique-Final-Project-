@@ -392,7 +392,6 @@ class CompilerGUI:
                     ("Outputs:", COLORS['text_dim']),
                     (" • Python Code", COLORS['text']),
                     (" • Balanced Eq", COLORS['text']),
-                    (" • IR Code", COLORS['text']),
                 ]
                 self.stage5_area.add_colored_lines(lines)
                 
@@ -412,14 +411,7 @@ class CompilerGUI:
                 for line in generated_code['balanced'].split('\n'):
                     output_lines.append((line, COLORS['success']))
                 
-                output_lines.extend([
-                    ("", COLORS['text']),
-                    ("--- INTERMEDIATE REPRESENTATION ---", COLORS['primary']),
-                ])
-                
-                for line in generated_code['ir'].split('\n'):
-                    output_lines.append((line, COLORS['text_dim']))
-                
+
                 self.output_area.add_colored_lines(output_lines)
             else:
                 lines = [
